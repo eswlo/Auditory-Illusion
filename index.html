@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptaible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Auditory Illusion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" style="--i:0;">Home</a></li>
+                <li><a href="client/about/about.html" style="--i:1;">About</a></li>
+                <li>
+                    <a href="#" style="--i:2;"> Illusion Demos ▾</a>
+                    <ul>
+                        <div class="dropdown">
+                            <li><a href="client/demos/streamSegregation/streamSeg.html" style="--j:0;">Stream Segregation</a></li>
+                            <li><a href="client/demos/scaleIllusion/scaleIllusion.html" style="--j:1;">Scale Illusion</a></li>
+                            <li><a href="client/demos/octaveIllusion/octaveIllusion.html" style="--j:2;">Octave Illusion</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="client/support/support.html" style="--i:3;">Support</a></li>
+                <li><a href="client/contact/contact.html" style="--i:4;">Contact</a></li>
+            </ul>
+        </nav>  
+    </header>
+    <main>
+        <div class="upper-content">
+            <h1>AUDITORY ILLUSION</h1>
+        </div>
+        <div class="lower-content">
+            <h3>A SELECTION OF INTERACTIVE DEMONSTRATIONS</h3>
+        </div>
+    </main>
+    <!-- custom js file link -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- ToDo: 
+1. See if getting rid of ul and li does not affect dropdown menu; 
+if so, try https://youtu.be/yE9DLIoDwCg?si=kiHLVBHZqmWTZjx4
+2. Shephard tone: 
+ a. control how fast each sweep is and the gap between sweeps.
+ b. put a note next to Start button to let users know they can go back to slide the control bars to adjust the above two features
+ -->

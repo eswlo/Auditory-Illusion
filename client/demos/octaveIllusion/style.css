@@ -1,0 +1,571 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background: #f8f3f3;
+}
+body {
+    min-height: 900px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* height: 65px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: #f9f9f9;
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    display: none;
+    position: absolute;
+    right: 15%;
+    font-size: 2.8rem;
+    color: #000000;
+    cursor: pointer;
+}
+
+.navbar{
+    width: 100%;
+    margin: auto;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: flex-end;
+}
+.navbar ul {
+    list-style: none;
+}
+.navbar ul li {
+    display: inline-block;
+    position: relative;
+}
+.navbar ul li a {
+    display: block;
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1rem;
+    padding: 20px 25px;
+}
+.navbar ul li > ul > .dropdown {
+    display: none;
+    width: 100%;
+    background: #f9f9f9;
+    position: absolute;
+    z-index: 999;
+}
+.navbar ul li > ul > .dropdown li {
+    display: block;
+}
+.navbar ul li a:hover {
+    background: #435567c9;
+    color: #fff;
+}
+.navbar ul li:hover ul .dropdown {
+    display: block;
+}
+
+main {
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    box-sizing: border-box;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    transition: flex-direction 1s ease; 
+}
+main .bottom-left {
+    flex: 1;
+    display: flex;
+    transition: flex 0.7s ease;
+}
+main .upper-right {
+    flex: 1;
+    display: flex;
+    transition: flex 0.7s ease;
+}
+main .bottom-left .demo {
+    width: 90%;
+    height: 90%;
+    margin: 20px;
+    background: #ffa600;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .bottom-left .demo .input-range-intvl {
+    flex: 1.5;
+    padding-top: 1px;
+    margin: 10px auto;
+    margin-bottom: 50px;
+    line-height: 20px;
+    color: #fff;
+    font-size: 18px;
+    border: 0;
+    outline: none;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .bottom-left .demo .input-range-intvl h3 {
+    padding-top: 60px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 130%;
+}
+.sliderIntvl {
+    margin-top: 10px;
+    margin-bottom: 0px;
+    padding-top: 0;
+    background-color: #ddd;
+    width: 100%;
+    appearance: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(214, 214, 214) 60%, rgb(214, 214, 214) 60%);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.sliderIntvl:hover {
+    opacity: 1;
+}
+main .bottom-left .demo .toggle-container {
+    flex: 1;
+    padding: 1px 10px 30px 10px;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+main .bottom-left .demo .toggle-container .toggle {
+    width: 50px;
+    height: 20px;
+    background: #444;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+main .bottom-left .demo .toggle-container .toggle.active {
+    background: #586a95;
+}
+main .bottom-left .demo .toggle-container .toggle-button {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 2px;
+    margin-left: 2px;
+}
+main .bottom-left .demo .toggle-container .toggle.active .toggle-button {
+    margin-left: 30px;
+}
+main .bottom-left .demo .volume-input-container {
+    flex: 3;
+    padding: 1px 10px;
+    width: 70%;
+    left: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main .bottom-left .demo .volume-input-container .input-range-L, 
+main .bottom-left .demo .volume-input-container .input-range-R  {
+    /* flex: 1 1 50%; */
+    box-sizing: border-box;
+    color: #000000;
+    font-size: 18px;
+    outline: none;
+    width: 150px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+main .bottom-left .demo .volume-input-container .input-range-L h3 {
+    padding-top: 50%;
+    color: #000000;
+    font-size: 16px;
+    line-height: 100%;
+}
+main .bottom-left .demo .volume-input-container .input-range-R h3 {
+    padding-top: 50%;
+    color: #000000;
+    font-size: 16px;
+    line-height: 100%;
+}
+main .bottom-left .demo .volume-input-container h3 {
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    font-weight: 100;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.sliderL, .sliderR {
+    margin-top: 20px;
+    background-color: #ddd;
+    width: 100%;
+    height: 20px;
+    appearance: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: rotate(270deg);
+    background: linear-gradient(90deg, rgb(214, 214, 214) 60%, rgb(214, 214, 214) 60%);
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+.sliderL:hover, .sliderR:hover {
+    opacity: 1;
+}
+#outputL, #outputR {
+    font-size: 0;
+}
+main .bottom-left .demo .button-container {
+    flex: 1;
+    padding: 10px;
+    padding-bottom: 10px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .bottom-left .demo .button-container button {
+    padding: 15px;
+    background: #586a95;
+    background-image: url(../../images/play-icon.png);
+    background-size: 60%;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 1vw;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    /* margin: 10px auto 0; */
+    border-radius: 50px;
+    transition: all 0.2s ease;
+    transition: background-image 0.5s ease;
+}
+main .bottom-left .demo .button-container button.active {
+    transform: scale(0.96);
+    box-shadow: 0 0 10px rgb(255, 253, 253);
+    background-image: url(../../images/stop-icon.png);
+    background-size: 60%;
+    background-position: center center; 
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease;
+}
+main .bottom-left .demo .demo-title {
+    flex: 1;
+    width: 90%;
+}
+main .bottom-left .demo .demo-title h1 {
+    color: black;
+    text-align: right;
+    font-size: 3vw;
+    padding: 20px 5px 30px 25px;
+}
+
+main .bottom-left .instruction {
+    width: 50%;
+    margin: 80px 0px 100px 0px;
+    background: #f0eee7;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+main .bottom-left .instruction h1 {
+    color: black;
+    font-size: 3vw;
+    line-height: 5vw;
+    text-align: right;
+    padding: 50px 20px;
+}
+main .bottom-left .instruction ul {
+    color: black;
+    font-size: 15px;
+    line-height: 1.5vw;
+    text-align: left;
+    padding: 10px 20px 50px 20px;
+    padding-left: 50px; 
+    /* transition: font-size 0.1s ease; */
+}
+
+main .upper-right .intro {
+    width: 95%;
+    height: 95%;
+    margin: 20px;
+    background: #efeadb;
+    border-radius: 20px;
+}
+main .upper-right .intro .intro-title {
+    width: 100%;
+    color: black;
+    font-size: 2vw;
+    line-height: 5vw;
+    text-align: right;
+    padding: 50px 20px;
+    padding-right: 50px;
+}
+main .upper-right .intro .img-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 50px;
+    padding-bottom: 10px;
+}
+#spinningDancer {
+    position: relative;
+    width: 25%;
+    border-radius: 10px;
+}
+main .upper-right .intro .intro-content {
+    width: 100%;
+    color: black;
+    font-size: 1.1vw;
+    font-weight: 500;
+    line-height: 1.7vw;
+    text-align: justify;
+    padding: 10px 50px 50px 50px;
+    /* transition: font-size 0.7s ease; */
+}
+
+@media (max-width: 1350px) {
+    main {
+        transition: flex-direction 0.7s ease;
+    }
+    main .bottom-left {
+        flex: 1.5;
+        width: 90%;
+        height: 90%;
+        transition: flex 0.7s ease;
+    }
+    main .upper-right {
+        flex: 1;
+        margin-right: 20px;
+        transition: flex 0.7s ease;
+        height: fit-content
+    }
+    /* main .upper-right .intro {
+        overflow: auto;
+    } */
+    main .upper-right .intro .intro-content {
+        font-size: 1.5vw;
+        line-height: 2.5vw;
+        /* transition: font-size 0.7s ease; */
+    }
+    main .bottom-left .demo {
+        flex: 1;
+    }
+    main .bottom-left .demo .button-container {
+        margin-top: 20px;
+    }
+    main .bottom-left .instruction {
+        flex: 1;
+    }
+    main .bottom-left .instruction ul {
+        font-size: 1vw;
+        /* transition: font-size 0.1s ease; */
+    }
+    
+}
+
+@media (max-width: 1000px) {
+    main {
+        height: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: flex-direction 0.7s ease;
+    }
+    main .bottom-left {
+        order: 1;
+    }
+    main .bottom-left .instruction ul {
+        font-size: 1.5vw;
+        line-height: 150%;
+    }
+    main .upper-right {
+        width: 85%; 
+    }
+    main .upper-right .intro .intro-content {
+        font-size: 1.8vw;
+        line-height: 150%;
+    }
+    main .bottom-left .demo .button-container {
+        margin-top: 20px;
+    }
+    main .bottom-left .demo .input-range-intvl h3 {
+        padding-top: 30px;
+    }
+    main .bottom-left .demo .toggle-container .toggle {
+        margin-bottom: 20px;
+    }
+    main .bottom-left .demo .volume-input-container .input-range-L, 
+    main .bottom-left .demo .volume-input-container .input-range-R  {  
+        padding: 0 5px; 
+    }
+    main .bottom-left .instruction {
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1.3rem 5%;
+        background: #f9f9f9;
+    }
+    .icons {
+        display: inline-flex;
+    }
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+    .icons #close-icon {
+        display: none;
+    }
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: #719bc4;
+        transition: .3s ease;
+    }
+    #check:checked~.navbar {
+        height: 17rem;
+    }
+    .navbar ul {
+        top: 100%;
+        width: 100%;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+    }
+    #check:checked~.navbar ul {
+        margin: 0;
+        padding: 0;
+    }
+    .navbar ul li {
+        list-style: none;
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: .3s ease;
+    }
+    #check:checked~.navbar ul li {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+    .navbar ul li ul .dropdown {
+        width: 100%;
+        background: #719bc4;
+        position: relative;
+        z-index: 999;
+        display: none;
+    }
+    #check:checked~.navbar ul li:hover ul .dropdown {
+        margin: 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        left: 0;
+        display: block;
+    }
+    #check:checked~.navbar ul li:hover ul .dropdown li {
+        top: 100%;
+        width: 100%;
+        left: 0;
+        display: block;
+    }
+}
+
+@media (max-width: 650px) {
+    main .bottom-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    main .bottom-left .demo {
+        order: 1;
+        width: 100%;
+    }
+    main .bottom-left .instruction {
+        margin-top: 0;
+        margin-bottom: 0;
+        width: 100%;
+    }
+    main .bottom-left .instruction ul {
+        padding-top: 0;
+        font-size: 2.5vw;
+    }
+    main .bottom-left .demo .button-container button {
+        font-size: 2.5vw;
+        font-weight: 100;
+    }
+    main .bottom-left .demo .input-range-intvl {
+        margin-bottom: 20px;
+    }
+    main .bottom-left .demo .input-range-intvl h3 {
+        padding-top: 50px;
+    }
+    #outputIntvl {
+        margin-bottom: 10%;
+    }
+    main .upper-right  {
+        margin: 0;
+        width: 90%;
+    }
+    main .upper-right .intro {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        margin-bottom: 7%;
+    }
+    main .upper-right .intro .intro-content {
+        font-size: 2.5vw;
+    }
+}
+
+
+

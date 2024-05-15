@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptaible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Auditory Illusion: About</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../index.html" style="--i:0;">Home</a></li>
+                <li><a href="../about/about.html" style="--i:1;">About</a></li>
+                <li>
+                    <a href="#" style="--i:2;"> Illusion Demos ▾</a>
+                    <ul>
+                        <div class="dropdown">
+                            <li><a href="../demos/streamSegregation/streamSeg.html" style="--j:0;">Stream Segregation</a></li>
+                            <li><a href="../demos/scaleIllusion/scaleIllusion.html" style="--j:1;">Scale Illusion</a></li>
+                            <li><a href="../demos/octaveIllusion/octaveIllusion.html" style="--j:2;">Octave Illusion</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="#" style="--i:3;">Support</a></li>
+                <li><a href="../contact/contact.html" style="--i:4;">Contact</a></li>
+            </ul>
+        </nav>  
+    </header>
+    <main>
+        <div class="upper-left">
+            <h1>SUPPORT</h1>
+            <div class="support-content">
+                <p>
+                    <br>
+                    I hope you enjoy this project! 
+                    <br>
+                    Please consider supporting the project via donation if it is of use or interest to you. 
+                    <br>
+                    The donation will help the project continue to grow and expand.
+                    <br><br>
+                </p>
+            </div>
+        </div>
+        <div class="lower-right">
+            <div id="paypal-button-container"></div>
+            <p id="result-message"></p>
+            <!-- Replace the "test" client-id value with your client-id -->
+            <script src="https://www.paypal.com/sdk/js?client-id=AYq1QxfK-Aa7xGltDReCBfQJCUo_1cKVV_KiFvPocbCFYyJOPRUPyOcduTFeMVN5Hd4dC3VCek7Z9Op7&currency=USD"></script>
+            <script src="app.js"></script>
+        </div>
+    </main>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptaible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Psychoacoustics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- custom js file link -->
+    <script src="../../Tone.js"></script>
+</head>
+<body>
+    <header class="header">
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../index.html" style="--i:0;">Home</a></li>
+                <li><a href="../../about/about.html" style="--i:1;">About</a></li>
+                <li>
+                    <a href="#" style="--i:2;"> Illusion Demos ▾</a>
+                    <ul>
+                        <div class="dropdown">
+                            <li><a href="../streamSegregation/streamSeg.html" style="--j:0;">Stream Segregation</a></li>
+                            <li><a href="../scaleIllusion/scaleIllusion.html" style="--j:1;">Scale Illusion</a></li>
+                            <li><a href="#" style="--j:2;">Octave Illusion</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="../../contact/contact.html" style="--i:3;">Contact</a></li>
+            </ul>
+        </nav>   
+    </header>      
+    <div class="content">
+        <!-- code source: https://www.youtube.com/watch?v=KAG5wNPdoTw -->
+        <div class="slides">
+            <h1>Octave Illusion</h1>
+            <h2></h2>
+            <div class="slidesContent">
+                <img id="spinningDancer" src="../../images/Spinning_Dancer.gif" alt="Silhouette Illusion" loop>
+                <br>
+                <p>
+                    Have you seen this optical illusion of a spinning dancer known as Silhouette Illusion? 
+                    The Octave Illusion — discovered by Diana Deutsch in 1973 — demonstrates a similar theme of 
+                    perceptual variability auditorily. Try the interactive demonstration on the next page and see
+                    what pattern(s) you perceive — do you hear the high tone on the right, the left, or something else?
+                    For further information, visit Deutsch's <a href="https://deutsch.ucsd.edu/psychology/pages.php?i=202">research webpage</a>.
+                </p>
+            </div>
+        </div>
+        <div class="slides demo">
+            <div class = "slidesDemoContent">
+                <div class="demoTitle">
+                        Octave Illusion<br>
+                </div>
+                <div class="inputRangeIntvl">
+                    Note interval (in seconds):
+                    <input type="range" class="sliderIntvl" id= "intvlRange" min="0" max="100" value="0" step="0.01" oninput="setIntvl(this.value)"><br>
+                    <output id="outputIntvl"></output>
+                </div>
+                <div class="inputContainer">
+                    <div class="inputRangeL">
+                        <input type="range" class="sliderL" id= "volRangeL" min="0" max="100" value="0" step="0.01" oninput="setVolL(this.value)">
+                        <output id="outputL"></output>
+                    </div>
+                    <div class="inputRangeR">
+                        <input type="range" class="sliderR" id= "volRangeR" min="0" max="100" value="0" step="0.01" oninput="setVolR(this.value)">
+                        <output id="outputR"></output>
+                    </div>
+                    <div class="lLabel">
+                        <h3>L-channel volumn</h3>
+                    </div>
+                    <div class="rLabel">
+                        <h3>R-channel volumn</h3>
+                    </div>
+                </div>  
+                <div class="buttonContainer">
+                    <button onclick="startButtonFunction()">start</button> 
+                    <button onclick="stopButtonFunction()">stop</button>
+                </div>
+                <div class="instruction">
+                    <p>
+                        Instruction:
+                        <li>Headphones are required to perceive the illusion.</li>
+                        <li>Select note interval before starting. For other intervals, stop the current session, select, and then start.</li> 
+                        <li>Volumes can be adjusted while playing.</li>
+                        <li>you may experiment with different volumes and note intervals to see how they affect your perception.</li>
+                        <li>Try reversing your headphone and observe if your perception changes.</li>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

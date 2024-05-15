@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptaible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Auditory Illusion: Scale Illusion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <!-- custom js file link -->
+    <script src="../../Tone.js"></script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../../index.html" style="--i:0;">Home</a></li>
+                <li><a href="../../about/about.html" style="--i:1;">About</a></li>
+                <li>
+                    <a href="#" style="--i:2;"> Illusion Demos ▾</a>
+                    <ul>
+                        <div class="dropdown">
+                            <li><a href="../streamSegregation/streamSeg.html" style="--j:0;">Stream Segregation</a></li>
+                            <li><a href="#" style="--j:1;">Scale Illusion</a></li>
+                            <li><a href="../octaveIllusion/octaveIllusion.html" style="--j:2;">Octave Illusion</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="../../support/support.html" style="--i:3;">Support</a></li>
+                <li><a href="../../contact/contact.html" style="--i:4;">Contact</a></li>            </ul>
+        </nav>  
+    </header>   
+    <main>
+        <div class="bottom-left">
+            <div class="demo">
+                <div class="volume-input-container">
+                    <div class="input-range-L">
+                        <input type="range" class="sliderL" id= "volRangeL" min="0" max="100" value="0" step="0.01" oninput="setVolL(this.value)">
+                        <h3>L-channel volume</h3>
+                        <output id="outputL"></output>
+                    </div>
+                    <div class="input-range-R">
+                        <input type="range" class="sliderR" id= "volRangeR" min="0" max="100" value="0" step="0.01" oninput="setVolR(this.value)">
+                        <h3>R-channel volume</h3>
+                        <output id="outputR"></output>
+                    </div>
+                </div>  
+                <div class="button-container">
+                    <button class="startButton" onclick="startButtonFunction()"></button> 
+                    <!-- <button onclick="stopButtonFunction()"></button> -->
+                </div>
+                <div class="demo-title">
+                    <h1>Demonstration</h1>
+                 </div>
+            </div>
+            <div class="instruction">
+                <h1>Instructions</h1>
+                <ul>
+                    <li>Headphones are recommended to perceive the illusion; <b>test with a lower volume first if using one.</b></li>
+                    <li>Volumes can be adjusted while playing.</li>
+                    <li>You may experiment with different volumes between the two channels to see how doing so affect your perception.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="upper-right">
+            <div class="intro">
+                <div class="intro-title">
+                    <h1>Scale<br>Illusion</h1>
+                </div>
+                <div class="intro-content">
+                    <p>
+                        If you have analyzed the final movement of Tchaikovsky's 6th symphony, you may be intrigued by <a href="../../images/Tchaikovsky Symphony no. 6 finale string.png" target="_blank">the first few measures</a> amongst the strings: 
+                        moving up and down in each part, these notes together sing a harmonized passage of descending scales. 
+                        In terms of orchestration, such a technique produces a more dynamic flow between individual sections, both musically and acoustically.
+                        It is further enhanced by the common orchestra seating in the 19th century where the two violins sit on opposite sides, rendering a sort of panning effect. 
+                        <br>
+                        <br>
+                        Such a phenomenon can be explained by the Scale Illusion, which was noted and reported by Diana Deutsch back in 1973. 
+                        Read the instructions and try the interactive demonstration by adjusting the two volume levels independently to explore the threshold
+                        where the illusion begins to merge.
+                        For further information, visit Deutsch's <a href="https://deutsch.ucsd.edu/psychology/pages.php?i=203" target="_blank">research webpage</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script> 
+</body>
+</html>

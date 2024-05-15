@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptaible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Psychoacoustics</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- custom js file link -->
+    <script src="../../Tone.js"></script>
+</head>
+<body>
+    <header class="header">
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../index.html" style="--i:0;">Home</a></li>
+                <li><a href="../../about/about.html" style="--i:1;">About</a></li>
+                <li>
+                    <a href="#" style="--i:2;"> Illusion Demos ▾</a>
+                    <ul>
+                        <div class="dropdown">
+                            <li><a href="#" style="--j:0;">Stream Segregation</a></li>
+                            <li><a href="../scaleIllusion/scaleIllusion.html" style="--j:1;">Scale Illusion</a></li>
+                            <li><a href="../octaveIllusion/octaveIllusion.html" style="--j:2;">Octave Illusion</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="../../contact/contact.html" style="--i:3;">Contact</a></li>
+            </ul>
+        </nav>   
+    </header>      
+    <div class="content">
+        <!-- code source: https://www.youtube.com/watch?v=KAG5wNPdoTw -->
+        <div class="slides">
+            <h1>Stream Segregation</h1>
+            <h2>Based on Spectral Peak Position</h2>
+            <h3>
+                Lorem ipsum dolor sit amet, 
+                consectetur adipiscing elit. 
+                Sed do eiusmod tempor incididunt ut 
+                labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, 
+                quis nostrud exercitation ullamco 
+                laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate 
+                    velit esse cillum dolore eu fugiat nulla pariatur. 
+                    Excepteur sint occaecat cupidatat non proident, 
+                    sunt in culpa qui officia deserunt mollit anim id est laborum. <br>
+                    Scroll down for the interactive demonstration.
+            </h3>
+        </div>
+        <div class="slides demo">
+            <h3>
+                <div class="demoTitle">
+                        Stream Segregation<br>
+                        based on spectral peak position
+                </div>
+                <div class="inputRange">
+                    Step 1: choose ramp time (in seconds)<br>
+                    <input type="range" min="0" max="100" value="50" step="0.01" oninput="rampTime(this.value)">
+                    <output id="output"></output>
+                </div>
+                <div class="inputRange">
+                    Step 2: choose target bpm (starting bpm = 40) <br>
+                    <input type="range" min="0" max="100" value="50" step="0.01" oninput="endBpm(this.value)">
+                    <output id="output1"></output>
+                </div>
+                <button id="startBttn" onclick="startButtonFunction()">start</button> 
+                <button onclick="stopButtonFunction()">stop</button>
+                <br>
+                Use of headphone recommended.<br>
+            </h3>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

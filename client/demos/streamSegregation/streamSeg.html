@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Comptaible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Auditory Illusion: Stream Segregation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <!-- custom js file link -->
+    <script src="../../Tone.js"></script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="icons">
+            <i class='bx bx-menu' id="menu-icon"></i>
+            <i class='bx bx-x' id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <ul>
+                <li><a href="../../../index.html" style="--i:0;">Home</a></li>
+                <li><a href="../../about/about.html" style="--i:1;">About</a></li>
+                <li>
+                    <a href="#" style="--i:2;"> Illusion Demos ▾</a>
+                    <ul>
+                        <div class="dropdown">
+                            <li><a href="#" style="--j:0;">Stream Segregation</a></li>
+                            <li><a href="../scaleIllusion/scaleIllusion.html" style="--j:1;">Scale Illusion</a></li>
+                            <li><a href="../octaveIllusion/octaveIllusion.html" style="--j:2;">Octave Illusion</a></li>
+                        </div>
+                    </ul>
+                </li>
+                <li><a href="../../support/support.html" style="--i:3;">Support</a></li>
+                <li><a href="../../contact/contact.html" style="--i:4;">Contact</a></li>            </ul>
+        </nav>  
+    </header>  
+    <main>
+        <div class="bottom-left">
+            <div class="demo">
+                <div class="volume-input-container">
+                    <div class="input-range-ramp">
+                        <h3>ramp time<br>(in seconds)</h3>
+                        <input type="range" min="0" max="100" value="50" step="0.01" oninput="rampTime(this.value)">
+                        <output id="output"></output>
+                    </div>
+                    <div class="input-range-bpm">
+                        <h3>target BPM<br>(starting BPM = 40)</h3>
+                        <input type="range" min="0" max="100" value="50" step="0.01" oninput="endBpm(this.value)">
+                        <output id="output1"></output>
+                    </div>
+                </div>  
+                <div class="button-container">
+                    <button class="startButton" id="startBttn" onclick="startButtonFunction()"></button> 
+                    <!-- <button onclick="stopButtonFunction()">stop</button> -->
+                </div>
+                <div class="demo-title">
+                    <h1>Demonstration</h1>
+                 </div>
+            </div>
+            <div class="instruction">
+                <h1>Instructions</h1>
+                <ul>
+                    <li>Headphones are recommended to perceive the illusion; <b>test with a lower volume first if using one.</b></li>
+                    <li>Select ramp time and target BPM (beats per minute) before starting.</li>
+                    <li>Ramp time and target BPM cannot be manipulated while playing; for different ramp times and target BPMs, 
+                        stop the current session, reselect, and then start a new session.</li>
+                    <li>Experiment with different combinations of ramp times and BPMs and observe how they affect your perception.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="upper-right">
+            <div class="intro">
+                <div class="intro-title">
+                    <h1>Stream Segregation</h1>
+                    <h3>Based on Spectral Peak Position</h3>
+                </div>
+                <div class="intro-content">
+                    <p>
+                        When two notes with the same fundamental but different timbres are played in an alternative fashion,
+                        one may clearly perceive the pattern if the tempo is slow. However, as the playback speed increases, two distinct streams begin to emerge.
+                        This is termed <i>stream segregation based on spectral peak position</i> by Al Bregman 
+                        (visit Bregman's <a href="https://www.themusiclab.org/bregman" target="_blank">research website</a> for more information).
+                        <br>
+                        <br>
+                        Such a phenomenon has been implemented and can be observed in a number of musical works. 
+                        For example, in the beginning passage of one of Murail's early pieces, <i>Mémoire/Érosion</i>,
+                        we may hear its effect realized by the horn and the ensemble:
+                    </p>
+                    <div class="audio-container">
+                        <audio controls>
+                            <source src="../../audios/Murail section A beginning.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                    <p>
+                        Read the instructions and try the interactive demonstration by selecting different combinations of ramp times and target BPMs. 
+                        Observe how these pairs affect your perceptions. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>   
+</body>
+</html>
