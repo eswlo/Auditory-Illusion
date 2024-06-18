@@ -1,4 +1,4 @@
-# Interactive auditory illusions
+# Interactive Auditory Illusions
 A web audio application that facilitates the learning and experience of auditory illusions interactively.
 ## Demonstration
 Please visit https://intauditoryillusions.netlify.app/ for details.
