@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init({
+                publicKey: "7KM7PBbZ_eep25dZd",
+            });
+        })();
+    </script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -39,7 +50,7 @@
             <h1>CONTACT</h1>
         </div>
         <div class="lower-content">
-            <form onsubmit="sendEmail(); reset(); return false;">
+            <form onsubmit="sendMail(); reset(); return false;">
                 <input type="text" id="name" placeholder="Name" required>
                 <input type="email" id="email" placeholder="Email" required>
                 <input type="subject" id="subject" placeholder="Subject" required>
@@ -48,26 +59,6 @@
             </form>
         </div>
     </main>
-    <!-- custom js file link -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        // source credit: https://www.youtube.com/watch?v=sGQSz22U8VM
-        function sendEmail() {
-            Email.send({
-                Host : "smtp.elasticemail.com",
-                Username : "username",
-                Password : "password",
-                To : 'them@website.com',
-                From : document.getElementById("email").value,
-                Subject : document.getElementById("subject").value,
-                Body : "Name: " + document.getElementById("name").value
-                    + "<br> Email: " + document.getElementById("email").value
-                    + "<br> Message: " + document.getElementById("message").value
-            }).then(
-            message => alert("Message Sent Successfully!")
-            );
-        }
-    </script> 
 </body>
 </html>
 
